@@ -32,8 +32,11 @@ var CONFIG = {
   }
 })();
 document.querySelectorAll("[data-wa]").forEach(function(a){a.href="https://wa.me/"+CONFIG.phone});
-document.querySelectorAll("[data-fb]").forEach(function(a){a.href=CONFIG.facebook});
-document.querySelectorAll("[data-ig]").forEach(function(a){a.href=CONFIG.instagram});
+/* social links: show only when a real page link is set (the bare site address is a placeholder) */
+[["data-fb",CONFIG.facebook,/^https?:\/\/(www\.)?facebook\.com\/?$/i],["data-ig",CONFIG.instagram,/^https?:\/\/(www\.)?instagram\.com\/?$/i]].forEach(function(x){
+  document.querySelectorAll("["+x[0]+"]").forEach(function(a){
+    if(!x[1]||x[2].test(x[1])){var h=a.closest("p")&&a.closest("p").textContent.trim().length<60?a.closest("p"):a;h.style.display="none"}
+    else a.href=x[1]})});
 var m=document.querySelector(".menu"),n=document.querySelector(".nav");
 m.addEventListener("click",function(){var o=n.classList.toggle("open");m.setAttribute("aria-expanded",o)});
 var f=document.getElementById("enquiry");
@@ -174,3 +177,31 @@ if(!c||matchMedia("(prefers-reduced-motion: reduce)").matches||!matchMedia("(hov
 h.addEventListener("mousemove",function(e){var r=c.getBoundingClientRect(),x=(e.clientX-(r.left+r.width/2))/(innerWidth/2),y=(e.clientY-(r.top+r.height/2))/(innerHeight/2);
   c.style.setProperty("--ry",Math.max(-1,Math.min(1,x))*9+"deg");c.style.setProperty("--rx",Math.max(-1,Math.min(1,y))*-7+"deg")});
 h.addEventListener("mouseleave",function(){c.style.setProperty("--rx","0deg");c.style.setProperty("--ry","0deg")})})();
+
+/* services dropdown: tap / keyboard toggle (hover works from CSS on desktop) */
+(function(){
+  document.querySelectorAll(".dd-b").forEach(function(b){var d=b.parentNode;
+    b.addEventListener("click",function(e){e.stopPropagation();var o=d.classList.toggle("open");b.setAttribute("aria-expanded",o)})});
+  document.addEventListener("click",function(e){document.querySelectorAll(".dd.open").forEach(function(d){
+    if(!d.contains(e.target)){d.classList.remove("open");d.querySelector(".dd-b").setAttribute("aria-expanded","false")}})});
+})();
+
+/* help chat: quick actions in the corner */
+(function(){
+  if(document.querySelector(".hc"))return;
+  Object.assign(FI,{"Welcome to PTKP Aina oy!":"Tervetuloa PTKP Aina oy:n sivuille!","How can we help you today?":"Miten voimme auttaa sinua tänään?","Call us":"Soita meille","Message us on WhatsApp":"Laita viesti WhatsAppilla"});
+  var h=document.createElement("div");h.className="hc";
+  h.innerHTML='<div class="hc-panel" role="dialog" aria-label="Help"><div class="hc-head"><img src="images/ptkp-logo-icon.png" alt=""><div><strong>Welcome to PTKP Aina oy!</strong><span>How can we help you today?</span></div><button type="button" class="hc-x" aria-label="Close">&times;</button></div>'
+   +'<div class="hc-opts"><a class="p" href="contact.html">Request a Quote</a><a href="tel:+358400370275">Call us</a><a href="https://wa.me/'+CONFIG.phone+'" target="_blank" rel="noopener">Message us on WhatsApp</a><a href="services.html">Explore Our Services</a></div></div>'
+   +'<button type="button" class="hc-btn" aria-label="Help" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>';
+  document.body.appendChild(h);
+  var btn=h.querySelector(".hc-btn");
+  function set(o){h.classList.toggle("open",o);btn.setAttribute("aria-expanded",o);try{sessionStorage.setItem("hc","1")}catch(e){}}
+  btn.addEventListener("click",function(){set(!h.classList.contains("open"))});
+  h.querySelector(".hc-x").addEventListener("click",function(){set(false)});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")set(false)});
+  document.addEventListener("click",function(e){if(h.classList.contains("open")&&!h.contains(e.target))set(false)});
+  var seen=false;try{seen=!!sessionStorage.getItem("hc")}catch(e){}
+  if(!seen&&!matchMedia("(max-width: 820px)").matches)setTimeout(function(){if(!h.classList.contains("open"))h.classList.add("open"),btn.setAttribute("aria-expanded","true")},7000);
+  if(typeof applyLang==="function"&&typeof curLang!=="undefined")applyLang(curLang);
+})();
