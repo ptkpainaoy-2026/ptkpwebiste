@@ -9,3 +9,5 @@ Service photos for renovation, plumbing, electrical and cleaning are free-licenc
 - Electrical: https://www.pexels.com/photo/a-man-is-working-on-an-electrical-panel-27928762/
 - Cleaning: https://www.pexels.com/photo/group-of-people-cleaning-a-dining-room-6197108/ (overalls recoloured to brand blue)
 The PTKP logo and name, and the blue uniform colour, were added to the clothing digitally. Replace these with real PTKP job photos when available.
+
+Logistics & Moving: images/logistics.jpg is a van photo supplied for the project. The PTKP logo, name and phone number were added to the van digitally. Replace it with a photo of the real company van, and confirm the services listed on logistics.html with the client.
