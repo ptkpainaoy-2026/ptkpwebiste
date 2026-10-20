@@ -167,3 +167,10 @@ document.querySelectorAll(".g-item").forEach(function(b){b.addEventListener("cli
   var i=b.querySelector("img");im.src=i.src;im.alt=i.alt;cp.textContent=b.querySelector("span").textContent;d.showModal()})});
 d.querySelector(".x").addEventListener("click",function(){d.close()});
 d.addEventListener("click",function(e){if(e.target===d)d.close()})})();
+
+/* hero logo: gentle tilt toward the pointer (desktop only) */
+(function(){var h=document.querySelector(".hero-logo"),c=h&&h.querySelector(".hl-stage .hl-card");
+if(!c||matchMedia("(prefers-reduced-motion: reduce)").matches||!matchMedia("(hover: hover)").matches)return;
+h.addEventListener("mousemove",function(e){var r=c.getBoundingClientRect(),x=(e.clientX-(r.left+r.width/2))/(innerWidth/2),y=(e.clientY-(r.top+r.height/2))/(innerHeight/2);
+  c.style.setProperty("--ry",Math.max(-1,Math.min(1,x))*9+"deg");c.style.setProperty("--rx",Math.max(-1,Math.min(1,y))*-7+"deg")});
+h.addEventListener("mouseleave",function(){c.style.setProperty("--rx","0deg");c.style.setProperty("--ry","0deg")})})();
