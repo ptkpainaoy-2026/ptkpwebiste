@@ -224,3 +224,16 @@ h.addEventListener("mouseleave",function(){c.style.setProperty("--rx","0deg");c.
       e.setCustomValidity(e.validity.valueMissing?(e.tagName==="SELECT"?m.sel:m.req):(e.validity.typeMismatch?m.mail:""))});
     e.addEventListener("input",function(){e.setCustomValidity("")});
     e.addEventListener("change",function(){e.setCustomValidity("")})})})();
+
+/* phones: keep the FI/EN switch in the top bar, next to the menu button */
+(function(){
+  var lang=document.querySelector(".nav .lang"),bar=document.querySelector(".bar"),menu=document.querySelector(".menu"),nav=document.querySelector(".nav");
+  if(!lang||!bar||!menu||!nav)return;
+  var mq=matchMedia("(max-width: 820px)");
+  function place(){
+    if(mq.matches){if(lang.parentNode!==bar)bar.insertBefore(lang,menu);lang.classList.add("lang-bar")}
+    else{if(lang.parentNode!==nav)nav.appendChild(lang);lang.classList.remove("lang-bar")}
+  }
+  place();
+  (mq.addEventListener?mq.addEventListener("change",place):mq.addListener(place));
+})();
