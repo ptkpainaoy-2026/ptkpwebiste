@@ -48,6 +48,8 @@ if(f){
   err.textContent="Sorry, sending failed. Please try again or contact us by phone or WhatsApp.";
   ok.parentNode.insertBefore(err,ok.nextSibling);
   var okText=ok.textContent;
+  var ti=btn.querySelector(".t-idle"),tb=btn.querySelector(".t-busy");
+  function setBusy(b){if(ti)ti.hidden=b;if(tb)tb.hidden=!b}
   function show(msg,good){
     ok.style.display=good?"block":"none";err.style.display=good?"none":"block";
     if(good&&msg){ok.textContent=msg;ok.removeAttribute("data-t")}
@@ -66,11 +68,11 @@ if(f){
       d.append(g.name,v("name"));d.append(g.email,v("email"));d.append(g.phone,v("phone"));
       d.append(g.service,svc);d.append(g.location,v("location"));d.append(g.subject,v("subject"));
       d.append(g.message,msg);d.append(g.method,method);
-      var label=btn.textContent;btn.disabled=true;btn.textContent=(curLang==="fi"?"Lähetetään...":"Sending...");
+      btn.disabled=true;setBusy(true);
       fetch(g.url,{method:"POST",mode:"no-cors",body:d}).then(function(){
-        btn.disabled=false;btn.textContent=label;f.reset();show(okText,true);
+        btn.disabled=false;setBusy(false);f.reset();show(okText,true);
       }).catch(function(){
-        btn.disabled=false;btn.textContent=label;show("",false);
+        btn.disabled=false;setBusy(false);show("",false);
       });
     }else{
       var b="Service: "+v("service")+"\nLocation: "+v("location")+"\n\n"+v("message")+"\n\nName: "+v("name")+"\nPhone: "+v("phone")+"\nEmail: "+v("email")+"\nPreferred contact: "+method;
@@ -131,6 +133,7 @@ Object.assign(FI,{"Business ID: 3589678-3":"Y-tunnus: 3589678-3","What We Do":"M
 Object.assign(FI,{"Construction · Renovation · Cleaning · Moving":"Rakentaminen · Remontointi · Siivous · Muutto","Our Services in Pictures":"Palvelumme kuvina","A look at the kind of work we do for homes and businesses.":"Katsaus töihin, joita teemme koteihin ja yrityksille.","Service Area":"Toiminta-alue","Based in Vantaa, we serve homes and businesses across the Helsinki metropolitan area.":"Toimipaikkamme on Vantaalla, ja palvelemme koteja ja yrityksiä koko pääkaupunkiseudulla.","Not sure we cover your location? Contact us and we will gladly help.":"Etkö ole varma, palvelemmeko alueellasi? Ota yhteyttä, autamme mielellämme.","Call":"Soita","Quote":"Tarjous"});
 Object.assign(FI,{"Menu":"Valikko","Services menu":"Palvelut-valikko","Quick contact":"Pikayhteys","Help":"Apua","Close":"Sulje","Painting":"Maalaus","Electrical":"Sähkötyöt","Cleaning":"Siivous","Construction and renovation":"Rakentaminen ja remontointi","Carpenter building a terrace":"Puuseppä rakentamassa terassia","PTKP Aina Oy logo":"PTKP Aina Oy -logo","PTKP Aina Oy, Vantaa":"PTKP Aina Oy, Vantaa"});
 Object.assign(FI,{"Logistics & Moving": "Logistiikka ja muuttopalvelut", "Moving house or need goods transported? We help with moving, loading and transport for homes and businesses in the Helsinki area.": "Muutatko tai tarvitsetko tavaroiden kuljetusta? Autamme muutoissa, lastauksessa ja kuljetuksissa koteihin ja yrityksiin pääkaupunkiseudulla.", "Moving, loading and transport services for homes and business premises.": "Muutto-, lastaus- ja kuljetuspalvelut koteihin ja liiketiloihin.", "Moving, loading and transport for homes and businesses.": "Muutot, lastaus ja kuljetukset koteihin ja yrityksille.", "PTKP Aina Oy moving van": "PTKP Aina Oy:n muuttoauto", "Enquire About Logistics & Moving →": "Tiedustele logistiikasta ja muutoista →", "Home and apartment moving": "Koti- ja asuntomuutot", "Office and business moving": "Yritys- ja toimistomuutot", "Furniture and goods transport": "Huonekalu- ja tavarakuljetukset", "Loading, unloading and carrying": "Lastaus, purku ja kantaminen", "Transport of building materials": "Rakennusmateriaalien kuljetukset"});
+Object.assign(FI,{"I agree that my details are used only to handle and respond to this enquiry.": "Hyväksyn, että tietojani käytetään vain tämän tiedustelun käsittelyyn ja siihen vastaamiseen.", "Send enquiry": "Lähetä tiedustelu", "Sending...": "Lähetetään...", "Your enquiry is sent straight to us. We will reply by email or phone.": "Tiedustelusi lähetetään suoraan meille. Vastaamme sähköpostitse tai puhelimitse.", "Your privacy matters.": "Yksityisyytesi on meille tärkeää.", "Please avoid including sensitive personal information. Enquiry details are used only for handling and responding to your request.": "Älä liitä viestiin arkaluonteisia henkilötietoja. Tiedustelun tietoja käytetään vain pyyntösi käsittelyyn ja siihen vastaamiseen."});
 var PH={"City / Area":"Kaupunki / alue","Optional":"Valinnainen"};
 var store=new WeakMap(),curLang="en";
 document.querySelectorAll("option").forEach(function(o){if(!o.hasAttribute("value"))o.value=o.textContent.trim()});
@@ -222,10 +225,10 @@ h.addEventListener("mouseleave",function(){c.style.setProperty("--rx","0deg");c.
 
 /* form validation messages in the chosen language (browser default follows the browser's own language) */
 (function(){var f=document.getElementById("enquiry");if(!f)return;
-  var M={fi:{req:"Täytä tämä kenttä.",sel:"Valitse vaihtoehto luettelosta.",mail:"Anna kelvollinen sähköpostiosoite."},en:{req:"Please fill out this field.",sel:"Please select an item in the list.",mail:"Please enter a valid email address."}};
+  var M={fi:{chk:"Valitse tämä ruutu jatkaaksesi.",req:"Täytä tämä kenttä.",sel:"Valitse vaihtoehto luettelosta.",mail:"Anna kelvollinen sähköpostiosoite."},en:{chk:"Please tick this box to continue.",req:"Please fill out this field.",sel:"Please select an item in the list.",mail:"Please enter a valid email address."}};
   f.querySelectorAll("input,select,textarea").forEach(function(e){
     e.addEventListener("invalid",function(){var m=M[curLang]||M.en;
-      e.setCustomValidity(e.validity.valueMissing?(e.tagName==="SELECT"?m.sel:m.req):(e.validity.typeMismatch?m.mail:""))});
+      e.setCustomValidity(e.validity.valueMissing?(e.tagName==="SELECT"?m.sel:(e.type==="checkbox"?m.chk:m.req)):(e.validity.typeMismatch?m.mail:""))});
     e.addEventListener("input",function(){e.setCustomValidity("")});
     e.addEventListener("change",function(){e.setCustomValidity("")})})})();
 
