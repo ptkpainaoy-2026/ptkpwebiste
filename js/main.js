@@ -2,7 +2,7 @@
 var CONFIG = {
   phone: "358400370275",
   email: "ptkpaina@gmail.com",
-  facebook: "https://www.facebook.com/",   // paste PTKP Aina oy Facebook page link
+  facebook: "https://www.facebook.com/",   // paste PTKP Aina Oy Facebook page link
   instagram: "https://www.instagram.com/", // paste Instagram profile link
   // EASY SETUP: paste the Google Form "pre-filled link" here (Form > ⋮ > Get pre-filled link, with all 8 questions filled in).
   // The website then finds the form address and all 8 entry ids by itself. Leave "" to use the manual settings below.
@@ -81,9 +81,9 @@ if(f){
 var FI={
 "Home":"Etusivu","Services":"Palvelut","Contact Us":"Ota yhteyttä","Request a Quote":"Pyydä tarjous","Contact":"Yhteystiedot","Quick Links":"Pikalinkit",
 "Reliable Services. Quality Work. Lasting Trust.":"Luotettavaa palvelua. Laadukasta työtä. Pysyvää luottamusta.",
-"PTKP Aina oy provides professional construction, renovation, carpentry, plumbing, electrical installation, cleaning and other essential services.":"PTKP Aina oy tarjoaa ammattimaista rakennus-, remontti-, puusepän-, putki-, sähköasennus-, siivous- ja muita tärkeitä palveluita.",
-"Explore Our Services":"Tutustu palveluihimme","About PTKP Aina oy":"Tietoa PTKP Aina oy:stä",
-"PTKP Aina oy is a Finnish limited liability company based in Vantaa, offering a diverse range of services to support residential, commercial and operational needs.":"PTKP Aina oy on vantaalainen osakeyhtiö, joka tarjoaa monipuolisia palveluita asuin-, liike- ja toimintatilojen tarpeisiin.",
+"PTKP Aina Oy provides professional construction, renovation, carpentry, plumbing, electrical installation, cleaning and other essential services.":"PTKP Aina Oy tarjoaa ammattimaista rakennus-, remontti-, puusepän-, putki-, sähköasennus-, siivous- ja muita tärkeitä palveluita.",
+"Explore Our Services":"Tutustu palveluihimme","About PTKP Aina Oy":"Tietoa PTKP Aina Oy:stä",
+"PTKP Aina Oy is a Finnish limited liability company based in Vantaa, offering a diverse range of services to support residential, commercial and operational needs.":"PTKP Aina Oy on vantaalainen osakeyhtiö, joka tarjoaa monipuolisia palveluita asuin-, liike- ja toimintatilojen tarpeisiin.",
 "Our activities include construction, carpentry, plumbing, surface finishing, electrical installation and maintenance, and cleaning services.":"Toimintaamme kuuluvat rakentaminen, puusepäntyöt, putkityöt, pintakäsittely, sähköasennus ja huolto sekä siivouspalvelut.",
 "Our Main Services":"Pääpalvelumme","We provide a wide range of services to meet your needs.":"Tarjoamme laajan valikoiman palveluita tarpeidesi mukaan.","View all services":"Katso kaikki palvelut",
 "Construction & Renovation":"Rakentaminen ja remontointi","Carpentry":"Puusepäntyöt","Plumbing":"Putkityöt","Painting & Surface Finishing":"Maalaus ja pintakäsittely","Electrical Installation & Maintenance":"Sähköasennus ja huolto","Cleaning Services":"Siivouspalvelut",
@@ -101,8 +101,8 @@ var FI={
 "How It Works":"Näin se toimii","Tell Us What You Need":"Kerro tarpeesi","Choose a service and describe your request.":"Valitse palvelu ja kuvaile pyyntösi.",
 "Discuss Your Requirements":"Käydään vaatimukset läpi","We review your enquiry and contact you to clarify details.":"Käymme tiedustelusi läpi ja otamme yhteyttä tarkentaaksemme tietoja.",
 "Receive a Proposal":"Saat tarjouksen","Pricing, scope and availability are agreed before work starts.":"Hinta, laajuus ja aikataulu sovitaan ennen työn alkua.",
-"Have a Project in Mind?":"Onko sinulla projekti mielessä?","Construction, carpentry, plumbing, electrical work, painting or cleaning – contact PTKP Aina oy.":"Rakennus, puusepäntyöt, putkityöt, sähkötyöt, maalaus tai siivous – ota yhteyttä PTKP Aina oy:hyn.","Contact Us Today":"Ota yhteyttä tänään",
-"Our Services":"Palvelumme","The range of services offered by PTKP Aina oy – from construction, carpentry and plumbing to painting, electrical work and cleaning.":"PTKP Aina oy:n palvelut – rakentamisesta, puusepäntöistä ja putkitöistä maalaukseen, sähkötöihin ja siivoukseen.",
+"Have a Project in Mind?":"Onko sinulla projekti mielessä?","Construction, carpentry, plumbing, electrical work, painting or cleaning – contact PTKP Aina Oy.":"Rakennus, puusepäntyöt, putkityöt, sähkötyöt, maalaus tai siivous – ota yhteyttä PTKP Aina Oy:hyn.","Contact Us Today":"Ota yhteyttä tänään",
+"Our Services":"Palvelumme","The range of services offered by PTKP Aina Oy – from construction, carpentry and plumbing to painting, electrical work and cleaning.":"PTKP Aina Oy:n palvelut – rakentamisesta, puusepäntöistä ja putkitöistä maalaukseen, sähkötöihin ja siivoukseen.",
 "Services include:":"Palveluihimme kuuluvat:",
 "Interior and full-home renovation":"Sisä- ja kokonaisremontit",
 "Terraces and decking":"Terassit ja kansirakenteet","Flooring installation":"Lattioiden asennus","Framing and partition walls":"Rungot ja väliseinät","Kitchen installation":"Keittiöasennus","Custom woodwork and repairs":"Mittatilaustyöt ja korjaukset",
@@ -113,19 +113,20 @@ var FI={
 
 "Enquire About Construction →":"Tiedustele rakentamisesta →","Enquire About Carpentry →":"Tiedustele puusepäntöistä →","Enquire About Plumbing →":"Tiedustele putkitöistä →","Enquire About Painting →":"Tiedustele maalauksesta →","Enquire About Electrical Installation →":"Tiedustele sähköasennuksesta →","Enquire About Cleaning Services →":"Tiedustele siivouksesta →",
 "Looking for a Reliable Service Partner?":"Etsitkö luotettavaa palvelukumppania?","Tell us about your project and we will get in touch to discuss the details.":"Kerro projektistasi, niin otamme yhteyttä ja käymme tiedot läpi.","Send an Enquiry →":"Lähetä tiedustelu →",
-"Contact PTKP Aina oy":"Ota yhteyttä PTKP Aina oy:hyn","Have a project, service requirement or business enquiry? Fill out the form below and our team will review your request and contact you.":"Onko sinulla projekti, palvelutarve tai yritystiedustelu? Täytä lomake, niin tiimimme käy pyyntösi läpi ja ottaa yhteyttä.",
+"Contact PTKP Aina Oy":"Ota yhteyttä PTKP Aina Oy:hyn","Have a project, service requirement or business enquiry? Fill out the form below and our team will review your request and contact you.":"Onko sinulla projekti, palvelutarve tai yritystiedustelu? Täytä lomake, niin tiimimme käy pyyntösi läpi ja ottaa yhteyttä.",
 "Get in Touch":"Yhteystiedot","Send an Enquiry":"Lähetä tiedustelu","View on Google Maps →":"Näytä Google Mapsissa →",
 "Full Name *":"Koko nimi *","Email Address *":"Sähköpostiosoite *","Phone Number *":"Puhelinnumero *","Service Required *":"Tarvittava palvelu *","Select a service":"Valitse palvelu","Other":"Muu",
 "Project Location":"Työkohteen sijainti","Subject":"Aihe","Describe Your Requirements *":"Kuvaile tarpeesi *","Preferred Contact Method":"Toivottu yhteydenottotapa","Email":"Sähköposti","Phone":"Puhelin","Either is fine":"Kumpi vain käy",
 "Submit Enquiry":"Lähetä tiedustelu","Thank you! We will contact you soon.":"Kiitos! Otamme pian yhteyttä.","Your information will only be used to respond to your enquiry.":"Tietojasi käytetään vain tiedusteluusi vastaamiseen.",
 "Your Privacy Matters":"Yksityisyytesi on tärkeää","The information you provide will be used only to respond to your enquiry and will not be shared with third parties. You can contact us at any time regarding your personal data or to request deletion of your information.":"Antamiasi tietoja käytetään vain tiedusteluusi vastaamiseen, eikä niitä luovuteta kolmansille osapuolille. Voit ottaa meihin yhteyttä milloin tahansa henkilötietoihisi liittyen tai pyytää tietojesi poistamista.",
-"© 2026 PTKP Aina oy. All rights reserved.":"© 2026 PTKP Aina oy. Kaikki oikeudet pidätetään.",
-"PTKP Aina oy – Construction, Renovation, Plumbing & Electrical in Vantaa":"PTKP Aina oy – Rakennus, remontti, putki- ja sähkötyöt Vantaalla",
-"Services – PTKP Aina oy":"Palvelut – PTKP Aina oy","Contact Us – PTKP Aina oy":"Ota yhteyttä – PTKP Aina oy"
+"© 2026 PTKP Aina Oy. All rights reserved.":"© 2026 PTKP Aina Oy. Kaikki oikeudet pidätetään.",
+"PTKP Aina Oy – Construction, Renovation, Plumbing & Electrical in Vantaa":"PTKP Aina Oy – Rakennus, remontti, putki- ja sähkötyöt Vantaalla",
+"Services – PTKP Aina Oy":"Palvelut – PTKP Aina Oy","Contact Us – PTKP Aina Oy":"Ota yhteyttä – PTKP Aina Oy"
 };
 FI["Your email app has opened with your message. Please press Send there to complete your enquiry."]="Sähköpostiohjelmasi avautui viestin kanssa. Paina siellä Lähetä viimeistelläksesi tiedustelun.";FI["Sorry, sending failed. Please try again or contact us by phone or WhatsApp."]="Valitettavasti lähetys epäonnistui. Yritä uudelleen tai ota yhteyttä puhelimitse tai WhatsAppilla.";FI["CEO:"]="Toimitusjohtaja:";FI["Based in Vantaa"]="Toimipaikka Vantaa";FI["Quality guaranteed"]="Laatu takuulla";FI["Free quotation"]="Maksuton tarjous";FI["Business ID 3589678-3"]="Y-tunnus 3589678-3";
 Object.assign(FI,{"Business ID: 3589678-3":"Y-tunnus: 3589678-3","What We Do":"Mitä teemme","Other Services":"Muut palvelumme","Need This Service?":"Tarvitsetko tätä palvelua?","We work in Vantaa and across the Helsinki metropolitan area.":"Työskentelemme Vantaalla ja koko pääkaupunkiseudulla.","Read more →":"Lue lisää →","Our Services":"Palvelumme","Frequently Asked Questions":"Usein kysytyt kysymykset","Answers to common questions about working with us.":"Vastauksia yleisiin kysymyksiin yhteistyöstä kanssamme.","Whether you are updating a single room or renovating an entire home, we carry out the work for homes and business premises.":"Päivitätpä yhtä huonetta tai remontoit koko kotia, hoidamme työn koteihin ja liiketiloihin.","From new terraces to flooring and kitchen installations, our carpentry work focuses on solid workmanship and attention to detail.":"Uusista terasseista lattioihin ja keittiöasennuksiin – puusepäntyömme keskittyy laadukkaaseen toteutukseen ja huolellisuuteen.","Dripping tap, leaking pipe or a new fixture to install? We handle plumbing repairs and installations for homes and business premises.":"Tippuva hana, vuotava putki tai uusi kaluste asennettavana? Hoidamme putkikorjaukset ja -asennukset koteihin ja liiketiloihin.","Fresh paint and well-prepared surfaces make a space look clean and cared for, inside and out.":"Raikas maalipinta ja huolella valmistellut pinnat saavat tilan näyttämään siistiltä ja hoidetulta sekä sisällä että ulkona.","We carry out electrical installation, repair and maintenance for suitable building projects. Tell us about your project and we will let you know how we can help.":"Teemme sähköasennuksia, korjauksia ja huoltoa soveltuviin rakennushankkeisiin. Kerro hankkeestasi, niin kerromme, miten voimme auttaa.","From regular home cleaning to post-renovation cleaning and window washing, we keep residential and commercial spaces clean.":"Tavallisesta kotisiivouksesta remonttien jälkeiseen siivoukseen ja ikkunanpesuun – pidämme koti- ja liiketilat puhtaina.","How do I request a quote?":"Miten pyydän tarjouksen?","Fill in the enquiry form, call us or message us on WhatsApp. We review your request and contact you to clarify the details.":"Täytä tiedustelulomake, soita meille tai laita viesti WhatsAppilla. Käymme pyyntösi läpi ja otamme yhteyttä tarkentaaksemme tietoja.","Is the quotation free?":"Onko tarjous maksuton?","Yes, quotations are free of charge. Pricing, scope and availability are agreed before work starts.":"Kyllä, tarjous on maksuton. Hinta, laajuus ja aikataulu sovitaan ennen työn alkua.","Which areas do you serve?":"Millä alueilla toimitte?","We are based in Vantaa and serve homes and businesses across the Helsinki metropolitan area. Not sure about your location? Just ask.":"Toimipaikkamme on Vantaalla, ja palvelemme koteja ja yrityksiä koko pääkaupunkiseudulla. Etkö ole varma sijainnistasi? Kysy rohkeasti.","Do you work for homes and for businesses?":"Teettekö töitä sekä kotitalouksille että yrityksille?","Yes. We carry out work for private homes as well as business premises.":"Kyllä. Teemme töitä sekä yksityisille kodeille että liiketiloihin.","Which services do you offer?":"Mitä palveluita tarjoatte?","Construction and renovation, carpentry, plumbing, painting and surface finishing, electrical installation and maintenance, and cleaning services.":"Rakentaminen ja remontointi, puusepäntyöt, putkityöt, maalaus ja pintakäsittely, sähköasennus ja huolto sekä siivouspalvelut.","Can I contact you by phone or WhatsApp?":"Voinko ottaa yhteyttä puhelimitse tai WhatsAppilla?","Yes. You can call or message us on +358 400 370 275, or send an email to ptkpaina@gmail.com.":"Kyllä. Voit soittaa tai laittaa viestin numeroon +358 400 370 275 tai lähettää sähköpostia osoitteeseen ptkpaina@gmail.com."});
 Object.assign(FI,{"Construction · Renovation · Cleaning":"Rakentaminen · Remontointi · Siivous","Our Services in Pictures":"Palvelumme kuvina","A look at the kind of work we do for homes and businesses.":"Katsaus töihin, joita teemme koteihin ja yrityksille.","Service Area":"Toiminta-alue","Based in Vantaa, we serve homes and businesses across the Helsinki metropolitan area.":"Toimipaikkamme on Vantaalla, ja palvelemme koteja ja yrityksiä koko pääkaupunkiseudulla.","Not sure we cover your location? Contact us and we will gladly help.":"Etkö ole varma, palvelemmeko alueellasi? Ota yhteyttä, autamme mielellämme.","Call":"Soita","Quote":"Tarjous"});
+Object.assign(FI,{"Menu":"Valikko","Services menu":"Palvelut-valikko","Quick contact":"Pikayhteys","Help":"Apua","Close":"Sulje","Painting":"Maalaus","Electrical":"Sähkötyöt","Cleaning":"Siivous","Construction and renovation":"Rakentaminen ja remontointi","Carpenter building a terrace":"Puuseppä rakentamassa terassia","PTKP Aina Oy logo":"PTKP Aina Oy -logo","PTKP Aina Oy, Vantaa":"PTKP Aina Oy, Vantaa"});
 var PH={"City / Area":"Kaupunki / alue","Optional":"Valinnainen"};
 var store=new WeakMap(),curLang="en";
 document.querySelectorAll("option").forEach(function(o){if(!o.hasAttribute("value"))o.value=o.textContent.trim()});
@@ -145,6 +146,14 @@ function applyLang(l){
   });
   if(!document.documentElement.hasAttribute("data-en-title"))document.documentElement.setAttribute("data-en-title",document.title);
   var et=document.documentElement.getAttribute("data-en-title");document.title=(l==="fi"&&FI[et])?FI[et]:et;
+  document.querySelectorAll("[alt],[aria-label],iframe[title]").forEach(function(e){
+    [["alt","data-en-alt"],["aria-label","data-en-aria"],["title","data-en-ttl"]].forEach(function(p){
+      if(p[0]==="title"&&e.tagName!=="IFRAME")return;
+      if(!e.hasAttribute(p[0]))return;
+      if(!e.hasAttribute(p[1]))e.setAttribute(p[1],e.getAttribute(p[0]));
+      var en=e.getAttribute(p[1]);e.setAttribute(p[0],(l==="fi"&&FI[en])?FI[en]:en)})});
+  document.querySelectorAll("iframe[src*='google.com/maps']").forEach(function(fr){
+    var u=fr.getAttribute("src").replace(/&hl=\w+/,"")+"&hl="+l;if(fr.getAttribute("src")!==u)fr.setAttribute("src",u)});
   document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.lang===l)});
   try{localStorage.setItem("lang",l)}catch(e){}
 }
@@ -189,9 +198,9 @@ h.addEventListener("mouseleave",function(){c.style.setProperty("--rx","0deg");c.
 /* help chat: quick actions in the corner */
 (function(){
   if(document.querySelector(".hc"))return;
-  Object.assign(FI,{"Welcome to PTKP Aina oy!":"Tervetuloa PTKP Aina oy:n sivuille!","How can we help you today?":"Miten voimme auttaa sinua tänään?","Call us":"Soita meille","Message us on WhatsApp":"Laita viesti WhatsAppilla"});
+  Object.assign(FI,{"Welcome to PTKP Aina Oy!":"Tervetuloa PTKP Aina Oy:n sivuille!","How can we help you today?":"Miten voimme auttaa sinua tänään?","Call us":"Soita meille","Message us on WhatsApp":"Laita viesti WhatsAppilla"});
   var h=document.createElement("div");h.className="hc";
-  h.innerHTML='<div class="hc-panel" role="dialog" aria-label="Help"><div class="hc-head"><img src="images/ptkp-logo-icon.png" alt=""><div><strong>Welcome to PTKP Aina oy!</strong><span>How can we help you today?</span></div><button type="button" class="hc-x" aria-label="Close">&times;</button></div>'
+  h.innerHTML='<div class="hc-panel" role="dialog" aria-label="Help"><div class="hc-head"><img src="images/ptkp-logo-icon.png" alt=""><div><strong>Welcome to PTKP Aina Oy!</strong><span>How can we help you today?</span></div><button type="button" class="hc-x" aria-label="Close">&times;</button></div>'
    +'<div class="hc-opts"><a class="p" href="contact.html">Request a Quote</a><a href="tel:+358400370275">Call us</a><a href="https://wa.me/'+CONFIG.phone+'" target="_blank" rel="noopener">Message us on WhatsApp</a><a href="services.html">Explore Our Services</a></div></div>'
    +'<button type="button" class="hc-btn" aria-label="Help" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>';
   document.body.appendChild(h);
@@ -205,3 +214,13 @@ h.addEventListener("mouseleave",function(){c.style.setProperty("--rx","0deg");c.
   if(!seen&&!matchMedia("(max-width: 820px)").matches)setTimeout(function(){if(!h.classList.contains("open"))h.classList.add("open"),btn.setAttribute("aria-expanded","true")},7000);
   if(typeof applyLang==="function"&&typeof curLang!=="undefined")applyLang(curLang);
 })();
+
+
+/* form validation messages in the chosen language (browser default follows the browser's own language) */
+(function(){var f=document.getElementById("enquiry");if(!f)return;
+  var M={fi:{req:"Täytä tämä kenttä.",sel:"Valitse vaihtoehto luettelosta.",mail:"Anna kelvollinen sähköpostiosoite."},en:{req:"Please fill out this field.",sel:"Please select an item in the list.",mail:"Please enter a valid email address."}};
+  f.querySelectorAll("input,select,textarea").forEach(function(e){
+    e.addEventListener("invalid",function(){var m=M[curLang]||M.en;
+      e.setCustomValidity(e.validity.valueMissing?(e.tagName==="SELECT"?m.sel:m.req):(e.validity.typeMismatch?m.mail:""))});
+    e.addEventListener("input",function(){e.setCustomValidity("")});
+    e.addEventListener("change",function(){e.setCustomValidity("")})})})();
