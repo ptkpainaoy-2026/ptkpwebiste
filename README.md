@@ -11,3 +11,5 @@ Service photos for renovation, plumbing, electrical and cleaning are free-licenc
 The PTKP logo and name, and the blue uniform colour, were added to the clothing digitally. Replace these with real PTKP job photos when available.
 
 Logistics & Moving: images/logistics.jpg is a van photo supplied for the project. The PTKP logo, name and phone number were added to the van digitally. Replace it with a photo of the real company van, and confirm the services listed on logistics.html with the client.
+
+Painting: photo supplied by the project owner (woman using a paint sprayer); the shirt was recoloured to brand blue and the PTKP lettering added digitally. Original is 600x600 px (enlarged to 1200). Confirm its licence before launch.
