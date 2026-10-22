@@ -88,6 +88,8 @@ if(f){
       d.append(g.name,v("name"));d.append(g.email,v("email"));d.append(g.phone,v("phone"));
       d.append(g.service,svc);d.append(g.location,v("location"));d.append(g.subject,v("subject"));
       d.append(g.message,msg);d.append(g.method,method);
+      /* Google Forms built-in "collect email addresses" field. Ignored if the form does not collect emails; needed (and used for the automatic copy to the customer) when it does. */
+      d.append("emailAddress",v("email"));
       var sent={name:v("name"),service:v("service"),email:v("email")};
       btn.disabled=true;setBusy(true);
       fetch(g.url,{method:"POST",mode:"no-cors",body:d}).then(function(){
