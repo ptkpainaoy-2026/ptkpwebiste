@@ -583,3 +583,22 @@ a.hl-tile:hover .hl-name,a.hl-tile:focus-visible .hl-name{opacity:1;transform:tr
 .hl-tile.t2 .hl-name,.hl-tile.t4 .hl-name{left:auto;right:0;transform:translate(0,-4px)}.hl-tile.t2:hover .hl-name,.hl-tile.t4:hover .hl-name,.hl-tile.t2:focus-visible .hl-name,.hl-tile.t4:focus-visible .hl-name{transform:translate(0,0)}
 .hl-tile.t5 .hl-name,.hl-tile.t6 .hl-name,.hl-tile.t7 .hl-name{top:auto;bottom:calc(100% + 10px)}
 @media(hover:none){.hl-name{display:none}}
+
+/* ===== hero icons orbit around the logo ===== */
+.hl-stage{--off:46px;--ts:80px}
+.hl-orbit{position:absolute;left:calc(var(--off)*-1);right:calc(var(--off)*-1);top:50%;margin-top:calc(-50% - var(--off));aspect-ratio:1/1;z-index:2;pointer-events:none;animation:orbit 44s linear infinite}
+.hl-orbit .hl-tile{pointer-events:auto;right:auto;bottom:auto;width:var(--ts);height:var(--ts);margin:calc(var(--ts)/-2) 0 0 calc(var(--ts)/-2);animation:orbit-up 44s linear infinite}
+.hl-orbit .hl-tile.t1{left:50.000%;top:0.000%}
+.hl-orbit .hl-tile.t2{left:89.092%;top:18.826%}
+.hl-orbit .hl-tile.t3{left:98.746%;top:61.126%}
+.hl-orbit .hl-tile.t4{left:71.694%;top:95.048%}
+.hl-orbit .hl-tile.t5{left:28.306%;top:95.048%}
+.hl-orbit .hl-tile.t6{left:1.254%;top:61.126%}
+.hl-orbit .hl-tile.t7{left:10.908%;top:18.826%}
+.hl-orbit:hover,.hl-orbit:hover .hl-tile{animation-play-state:paused}
+.hl-orbit .hl-tile .hl-name{left:50%;right:auto;top:calc(100% + 10px);bottom:auto;transform:translate(-50%,-4px)}
+.hl-orbit a.hl-tile:hover .hl-name,.hl-orbit a.hl-tile:focus-visible .hl-name{transform:translate(-50%,0)}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@keyframes orbit-up{to{transform:rotate(-360deg)}}
+@media(max-width:860px){.hl-stage{--off:6px;--ts:52px;margin-top:52px}}
+@media(prefers-reduced-motion:reduce){.hl-orbit,.hl-orbit .hl-tile{animation:none!important}}
