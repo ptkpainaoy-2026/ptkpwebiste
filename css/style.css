@@ -570,3 +570,16 @@ section h2::before{background:var(--navy)}
 @keyframes mp-body{0%,4%{transform:translateX(-1px)}20%{transform:translateX(3px)}38%{transform:translateX(-1px)}56%{transform:translateX(3px)}72%,100%{transform:translateX(0)}}
 @keyframes mp-wet{0%,4%{transform:scaleX(.04)}56%,100%{transform:scaleX(1)}}
 @keyframes mp-s{0%,66%{opacity:0;transform:scale(.2) rotate(0)}76%{opacity:1;transform:scale(1.15) rotate(20deg)}86%{opacity:1;transform:scale(.9) rotate(30deg)}94%,100%{opacity:0;transform:scale(.4) rotate(45deg)}}
+
+/* hero icons are links to the service pages */
+a.hl-tile{text-decoration:none;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+a.hl-tile svg{transition:transform .25s ease}
+a.hl-tile:hover,a.hl-tile:focus-visible{animation-play-state:paused;box-shadow:0 0 0 4px rgba(255,255,255,.55),0 22px 38px -12px rgba(0,0,0,.6);z-index:4}
+a.hl-tile:hover svg,a.hl-tile:focus-visible svg{transform:scale(1.08)}
+a.hl-tile:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.hl-name{position:absolute;left:50%;top:calc(100% + 10px);transform:translate(-50%,-4px);white-space:nowrap;background:#fff;color:var(--navy);font:600 13px Poppins,Inter,sans-serif;padding:6px 12px;border-radius:99px;box-shadow:0 10px 22px -10px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+a.hl-tile:hover .hl-name,a.hl-tile:focus-visible .hl-name{opacity:1;transform:translate(-50%,0)}
+.hl-tile.t1 .hl-name{left:0;transform:translate(0,-4px)}.hl-tile.t1:hover .hl-name,.hl-tile.t1:focus-visible .hl-name{transform:translate(0,0)}
+.hl-tile.t2 .hl-name,.hl-tile.t4 .hl-name{left:auto;right:0;transform:translate(0,-4px)}.hl-tile.t2:hover .hl-name,.hl-tile.t4:hover .hl-name,.hl-tile.t2:focus-visible .hl-name,.hl-tile.t4:focus-visible .hl-name{transform:translate(0,0)}
+.hl-tile.t5 .hl-name,.hl-tile.t6 .hl-name,.hl-tile.t7 .hl-name{top:auto;bottom:calc(100% + 10px)}
+@media(hover:none){.hl-name{display:none}}
