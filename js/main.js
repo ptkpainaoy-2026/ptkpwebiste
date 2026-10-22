@@ -2,6 +2,7 @@
 var CONFIG = {
   phone: "358400370275",
   email: "ptkpaina@gmail.com",
+  confirmEmail: false,   // set to true AFTER the Google Form auto-reply script is installed (then the thank-you box also says a confirmation email was sent)
   facebook: "https://www.facebook.com/",   // paste PTKP Aina Oy Facebook page link
   instagram: "https://www.instagram.com/", // paste Instagram profile link
   // EASY SETUP: paste the Google Form "pre-filled link" here (Form > ⋮ > Get pre-filled link, with all 8 questions filled in).
@@ -52,10 +53,29 @@ if(f){
   function setBusy(b){if(ti)ti.hidden=b;if(tb)tb.hidden=!b}
   function show(msg,good){
     ok.style.display=good?"block":"none";err.style.display=good?"none":"block";
-    if(good&&msg){ok.textContent=msg;ok.removeAttribute("data-t")}
+    if(good&&msg){ok.className="";ok.textContent=msg;ok.removeAttribute("data-t")}
     (good?ok:err).scrollIntoView({behavior:"smooth",block:"center"});
     if(typeof applyLang==="function"&&typeof curLang!=="undefined")applyLang(curLang);
   }
+  var T={
+    fi:{h:"Kiitos{n}! Pyyntösi on vastaanotettu.",p:"Olemme saaneet tiedustelusi palvelusta {s}. Otamme sinuun yhteyttä mahdollisimman pian valitsemaasi tapaa käyttäen.",mail:"Lähetimme vahvistuksen myös sähköpostiisi {e}.",w:"Jatka WhatsAppissa",c:"Soita meille",wt:"Hei! Lähetin juuri tarjouspyynnön verkkosivujen kautta{n2}. Palvelu: {s}."},
+    en:{h:"Thank you{n}! Your request has been received.",p:"We have received your enquiry about {s}. We will contact you as soon as possible in the way you chose.",mail:"We also sent a confirmation to your email {e}.",w:"Continue on WhatsApp",c:"Call us",wt:"Hello! I just sent a quote request through the website{n2}. Service: {s}."}
+  };
+  window.lastC=null;
+  window.renderConfirm=function(){
+    var c=window.lastC;if(!c)return;var fi=(typeof curLang!=="undefined"&&curLang==="fi"),t=T[fi?"fi":"en"];
+    var first=(c.name||"").trim().split(/\s+/)[0]||"";
+    var svc=(fi&&FI[c.service])||c.service;
+    function R(x){return x.split("{n}").join(first?", "+first:"").split("{n2}").join(first?(fi?" (nimi: ":" (name: ")+first+")":"").split("{s}").join(svc).split("{e}").join(c.email||"")}
+    function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}
+    ok.className="rich";ok.removeAttribute("data-t");ok.textContent="";
+    ok.appendChild(el("strong","ok-h",R(t.h)));ok.appendChild(el("p","",R(t.p)));
+    if(CONFIG.confirmEmail&&c.email)ok.appendChild(el("p","",R(t.mail)));
+    var row=el("div","ok-btns");
+    var w=el("a","btn g",t.w);w.href="https://wa.me/"+CONFIG.phone+"?text="+encodeURIComponent(R(t.wt));w.target="_blank";w.rel="noopener";
+    var ph=el("a","btn o2",t.c);ph.href="tel:+"+CONFIG.phone;
+    row.appendChild(w);row.appendChild(ph);ok.appendChild(row);
+  };
   f.addEventListener("submit",function(e){
     e.preventDefault();var g=CONFIG.gform,v=function(k){return f.elements[k].value};
     var method=(f.querySelector("input[name=method]:checked")||{}).value||"Either is fine";
@@ -68,15 +88,17 @@ if(f){
       d.append(g.name,v("name"));d.append(g.email,v("email"));d.append(g.phone,v("phone"));
       d.append(g.service,svc);d.append(g.location,v("location"));d.append(g.subject,v("subject"));
       d.append(g.message,msg);d.append(g.method,method);
+      var sent={name:v("name"),service:v("service"),email:v("email")};
       btn.disabled=true;setBusy(true);
       fetch(g.url,{method:"POST",mode:"no-cors",body:d}).then(function(){
-        btn.disabled=false;setBusy(false);f.reset();show(okText,true);
+        btn.disabled=false;setBusy(false);f.reset();lastC=sent;renderConfirm();show("",true);
       }).catch(function(){
         btn.disabled=false;setBusy(false);show("",false);
       });
     }else{
       var b="Service: "+v("service")+"\nLocation: "+v("location")+"\n\n"+v("message")+"\n\nName: "+v("name")+"\nPhone: "+v("phone")+"\nEmail: "+v("email")+"\nPreferred contact: "+method;
       location.href="mailto:"+CONFIG.email+"?subject="+encodeURIComponent(v("subject")||"Enquiry")+"&body="+encodeURIComponent(b);
+      lastC=null;
       show("Your email app has opened with your message. Please press Send there to complete your enquiry.",true);
     }
   });
@@ -163,6 +185,7 @@ function applyLang(l){
     var u=fr.getAttribute("src").replace(/&hl=\w+/,"")+"&hl="+l;if(fr.getAttribute("src")!==u)fr.setAttribute("src",u)});
   document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.lang===l)});
   try{localStorage.setItem("lang",l)}catch(e){}
+  if(window.lastC&&typeof window.renderConfirm==="function")window.renderConfirm();
 }
 document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){applyLang(b.dataset.lang)})});
 (function(){var s=null;try{s=localStorage.getItem("lang")}catch(e){}
