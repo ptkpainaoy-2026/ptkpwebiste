@@ -471,3 +471,18 @@ h1,h2,h3{letter-spacing:-.02em}
   .nav .dd-menu a{color:var(--navy)}
   .nav .dd-menu a:hover{background:#e3eefb;color:var(--navy)}
 }
+
+/* ===== hero v3: white and navy blue ===== */
+.hero-logo{background:linear-gradient(180deg,#fff,#f3f7fc);color:var(--navy)}
+.eyebrow{background:#eaf1f9;border-color:rgba(10,42,102,.22);color:var(--navy)}
+.hero-logo h1{color:var(--navy)}
+.hero-logo p{color:#3f4d66}
+.hero-logo .btn.g{background:var(--navy);color:#fff}.hero-logo .btn.g:hover{background:var(--green)}
+.hero-logo .btn.o{border-color:var(--navy);color:var(--navy);background:transparent}.hero-logo .btn.o:hover{background:var(--navy);color:#fff}
+.hl-stage{padding:34px;background:linear-gradient(145deg,#0A2A66,#0b3f94);border-radius:40px;box-shadow:0 42px 70px -38px rgba(10,42,102,.75)}
+.hl-glow{display:none}
+.hl-stage .hl-card{box-shadow:0 22px 40px -22px rgba(0,0,0,.55)}
+@media(max-width:860px){.hl-stage{padding:20px;border-radius:30px}}
+.hl-stage{padding:22px}
+.hl-stage .hl-card{padding:20px}
+@media(max-width:860px){.hl-stage{padding:14px}.hl-stage .hl-card{padding:14px}}
