@@ -610,3 +610,20 @@ a.hl-tile:hover .hl-name,a.hl-tile:focus-visible .hl-name{opacity:1;transform:tr
 /* gallery with 6 photos: the last (wide) one fills the whole bottom row */
 .g-item:nth-child(6):last-child{grid-column:1/-1}
 @media(max-width:720px){.g-item:nth-child(6):last-child{grid-column:1/-1}}
+
+/* ===== social buttons in their original brand colours ===== */
+:root{--fb:#0866FF;--wa:#25D366;--ig:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);--ig-btn:linear-gradient(45deg,#833AB4,#C13584,#E1306C)}
+/* footer icons: coloured circle, white symbol */
+.ft-social a{border-color:transparent;color:#fff;box-shadow:0 8px 18px -10px rgba(0,0,0,.6)}
+.ft-social a[data-fb]{background:var(--fb)}
+.ft-social a[data-ig]{background:var(--ig)}
+.ft-social a[data-wa]{background:var(--wa)}
+.ft-social a:hover{border-color:transparent;color:#fff;transform:translateY(-3px) scale(1.06);filter:brightness(1.08)}
+.ft-social a[data-fb]:hover{background:var(--fb)}.ft-social a[data-ig]:hover{background:var(--ig)}.ft-social a[data-wa]:hover{background:var(--wa)}
+/* buttons on the Contact page and in the home banner */
+a.btn[data-fb],.band a.btn.o[data-fb]{background:var(--fb);border-color:var(--fb);color:#fff}
+a.btn[data-ig],.band a.btn.o[data-ig]{background:var(--ig-btn);border-color:transparent;color:#fff}
+a.btn[data-wa],.band a.btn.o[data-wa]{background:var(--wa);border-color:var(--wa);color:#04321a}
+a.btn[data-fb]:hover,.band a.btn.o[data-fb]:hover{background:var(--fb);border-color:var(--fb);color:#fff;filter:brightness(1.1);transform:translateY(-2px)}
+a.btn[data-ig]:hover,.band a.btn.o[data-ig]:hover{background:var(--ig-btn);border-color:transparent;color:#fff;filter:brightness(1.1);transform:translateY(-2px)}
+a.btn[data-wa]:hover,.band a.btn.o[data-wa]:hover{background:var(--wa);border-color:var(--wa);color:#04321a;filter:brightness(1.06);transform:translateY(-2px)}
