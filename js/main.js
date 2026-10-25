@@ -3,7 +3,7 @@ var CONFIG = {
   phone: "358400370275",
   email: "ptkpaina@gmail.com",
   confirmEmail: false,   // set to true AFTER the Google Form auto-reply script is installed (then the thank-you box also says a confirmation email was sent)
-  facebook: "https://www.facebook.com/",   // paste PTKP Aina Oy Facebook page link
+  facebook: "https://www.facebook.com/people/PTKP-Aina-oy/61586414819153/",   // PTKP Aina Oy Facebook page
   instagram: "https://www.instagram.com/", // paste Instagram profile link
   // EASY SETUP: paste the Google Form "pre-filled link" here (Form > ⋮ > Get pre-filled link, with all 8 questions filled in).
   // The website then finds the form address and all 8 entry ids by itself. Leave "" to use the manual settings below.
