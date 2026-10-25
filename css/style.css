@@ -266,11 +266,6 @@ h1,h2,h3{letter-spacing:-.02em}
 .rn-roof{opacity:0;animation-name:rn-roof}.rn-door{opacity:0;transform-origin:40px 70px;animation-name:rn-door}
 @keyframes rn-roof{0%,52%{opacity:0;transform:translateY(-26px)}58%{opacity:1;transform:translateY(2px)}61%,100%{opacity:1;transform:translateY(0)}}
 @keyframes rn-door{0%,66%{opacity:0;transform:scaleY(0)}71%,100%{opacity:1;transform:scaleY(1)}}
-.el-plug{animation-name:el-plug}.el-on{opacity:0;animation-name:el-on}.el-rays{opacity:0;animation-name:el-on}.el-glow{animation-name:el-glow}.el-spark{opacity:0;transform-origin:56px 66px;animation-name:el-spark}
-@keyframes el-plug{0%,18%{transform:translateX(0)}28%,100%{transform:translateX(7px)}}
-@keyframes el-on{0%,31%{opacity:0}33%{opacity:1}35%{opacity:.35}38%,100%{opacity:1}}
-@keyframes el-glow{0%,31%{opacity:0}38%,100%{opacity:.5}}
-@keyframes el-spark{0%,27%{opacity:0;transform:scale(.3)}30%{opacity:1;transform:scale(1.2)}36%,100%{opacity:0;transform:scale(.6)}}
 @media(max-width:860px){.hl-tile{width:58px;height:58px;padding:4px}.hl-tile.t1{left:-12px;top:-18px}.hl-tile.t2{right:-14px}.hl-tile.t3{left:-18px}.hl-tile.t4{right:-18px}.hl-tile.t5{left:6%;bottom:-26px}.hl-tile.t6{right:8%;bottom:-26px}
 .hl-stage{order:-1;width:min(320px,78%);margin:34px auto 40px}.hl-stage .hl-card{width:100%;margin:0}}
 @media(prefers-reduced-motion:reduce){.hl-tile,.hl-tile *{animation:none!important}.hl-tile .m{opacity:1}.cp-nail{transform:translateY(18px)}.cp-ham,.pl-leak,.pl-wr,.mp-s1,.mp-s3,.el-spark,.mp-s2{display:none}.pl-ck,.el-on,.el-rays,.rn-roof,.rn-door,.br{opacity:1}.el-glow{opacity:.5}}
@@ -585,16 +580,16 @@ a.hl-tile:hover .hl-name,a.hl-tile:focus-visible .hl-name{opacity:1;transform:tr
 @media(hover:none){.hl-name{display:none}}
 
 /* ===== hero icons orbit around the logo ===== */
+.hl-orbit .hl-tile.t1{left:50.000%;top:0.000%}
+.hl-orbit .hl-tile.t2{left:93.301%;top:25.000%}
+.hl-orbit .hl-tile.t3{left:93.301%;top:75.000%}
+.hl-orbit .hl-tile.t4{left:50.000%;top:100.000%}
+.hl-orbit .hl-tile.t5{left:6.699%;top:75.000%}
+.hl-orbit .hl-tile.t7{left:6.699%;top:25.000%}
+
 .hl-stage{--off:46px;--ts:80px}
 .hl-orbit{position:absolute;left:calc(var(--off)*-1);right:calc(var(--off)*-1);top:50%;margin-top:calc(-50% - var(--off));aspect-ratio:1/1;z-index:2;pointer-events:none;animation:orbit 44s linear infinite}
 .hl-orbit .hl-tile{pointer-events:auto;right:auto;bottom:auto;width:var(--ts);height:var(--ts);margin:calc(var(--ts)/-2) 0 0 calc(var(--ts)/-2);animation:orbit-up 44s linear infinite}
-.hl-orbit .hl-tile.t1{left:50.000%;top:0.000%}
-.hl-orbit .hl-tile.t2{left:89.092%;top:18.826%}
-.hl-orbit .hl-tile.t3{left:98.746%;top:61.126%}
-.hl-orbit .hl-tile.t4{left:71.694%;top:95.048%}
-.hl-orbit .hl-tile.t5{left:28.306%;top:95.048%}
-.hl-orbit .hl-tile.t6{left:1.254%;top:61.126%}
-.hl-orbit .hl-tile.t7{left:10.908%;top:18.826%}
 .hl-orbit:hover,.hl-orbit:hover .hl-tile{animation-play-state:paused}
 .hl-orbit .hl-tile .hl-name{left:50%;right:auto;top:calc(100% + 10px);bottom:auto;transform:translate(-50%,-4px)}
 .hl-orbit a.hl-tile:hover .hl-name,.hl-orbit a.hl-tile:focus-visible .hl-name{transform:translate(-50%,0)}
@@ -611,3 +606,7 @@ a.hl-tile:hover .hl-name,a.hl-tile:focus-visible .hl-name{opacity:1;transform:tr
 #ok.rich p{margin:0 0 10px;color:var(--mute);font-size:15.5px;line-height:1.6}
 .ok-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 .ok-btns .btn{padding:12px 20px;font-size:15px}
+
+/* gallery with 6 photos: the last (wide) one fills the whole bottom row */
+.g-item:nth-child(6):last-child{grid-column:1/-1}
+@media(max-width:720px){.g-item:nth-child(6):last-child{grid-column:1/-1}}
