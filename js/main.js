@@ -61,6 +61,20 @@ if(f){
     fi:{h:"Kiitos{n}! Pyyntösi on vastaanotettu.",p:"Olemme saaneet tiedustelusi palvelusta {s}. Otamme sinuun yhteyttä mahdollisimman pian valitsemaasi tapaa käyttäen.",mail:"Lähetimme vahvistuksen myös sähköpostiisi {e}.",w:"Jatka WhatsAppissa",c:"Soita meille",wt:"Hei! Lähetin juuri tarjouspyynnön verkkosivujen kautta{n2}. Palvelu: {s}."},
     en:{h:"Thank you{n}! Your request has been received.",p:"We have received your enquiry about {s}. We will contact you as soon as possible in the way you chose.",mail:"We also sent a confirmation to your email {e}.",w:"Continue on WhatsApp",c:"Call us",wt:"Hello! I just sent a quote request through the website{n2}. Service: {s}."}
   };
+  /* Ready-written WhatsApp message with everything the customer typed (the customer still has to press Send in WhatsApp). */
+  function waText(c,fi,svc,first){
+    var L=fi?{h:"Hei! Lähetin juuri tarjouspyynnön verkkosivujen kautta.",n:"Nimi",s:"Palvelu",p:"Puhelin",e:"Sähköposti",l:"Sijainti",m:"Viesti",c:"Toivottu yhteydenottotapa"}
+            :{h:"Hello! I just sent a quote request through the website.",n:"Name",s:"Service",p:"Phone",e:"Email",l:"Location",m:"Message",c:"Preferred contact"};
+    var msg=(c.message||"").replace(/\s+/g," ").trim();if(msg.length>350)msg=msg.slice(0,350)+"...";
+    var meth=c.method||"";if(fi){meth={"Email":"Sähköposti","Phone":"Puhelin","Either is fine":"Kumpi vain käy"}[meth]||meth}
+    var out=[L.h,"",L.n+": "+(c.name||first||""),L.s+": "+svc];
+    if(c.phone)out.push(L.p+": "+c.phone);
+    if(c.email)out.push(L.e+": "+c.email);
+    if(c.location)out.push(L.l+": "+c.location);
+    if(meth)out.push(L.c+": "+meth);
+    if(msg)out.push(L.m+": "+msg);
+    return out.join("\n");
+  }
   window.lastC=null;
   window.renderConfirm=function(){
     var c=window.lastC;if(!c)return;var fi=(typeof curLang!=="undefined"&&curLang==="fi"),t=T[fi?"fi":"en"];
@@ -72,7 +86,7 @@ if(f){
     ok.appendChild(el("strong","ok-h",R(t.h)));ok.appendChild(el("p","",R(t.p)));
     if(CONFIG.confirmEmail&&c.email)ok.appendChild(el("p","",R(t.mail)));
     var row=el("div","ok-btns");
-    var w=el("a","btn g",t.w);w.href="https://wa.me/"+CONFIG.phone+"?text="+encodeURIComponent(R(t.wt));w.target="_blank";w.rel="noopener";
+    var w=el("a","btn g",t.w);w.href="https://wa.me/"+CONFIG.phone+"?text="+encodeURIComponent(waText(c,fi,svc,first));w.target="_blank";w.rel="noopener";
     var ph=el("a","btn o2",t.c);ph.href="tel:+"+CONFIG.phone;
     row.appendChild(w);row.appendChild(ph);ok.appendChild(row);
   };
@@ -90,7 +104,7 @@ if(f){
       d.append(g.message,msg);d.append(g.method,method);
       /* Google Forms built-in "collect email addresses" field. Ignored if the form does not collect emails; needed (and used for the automatic copy to the customer) when it does. */
       d.append("emailAddress",v("email"));
-      var sent={name:v("name"),service:v("service"),email:v("email")};
+      var sent={name:v("name"),service:v("service"),email:v("email"),phone:v("phone"),location:v("location"),message:v("message"),method:method};
       btn.disabled=true;setBusy(true);
       fetch(g.url,{method:"POST",mode:"no-cors",body:d}).then(function(){
         btn.disabled=false;setBusy(false);f.reset();lastC=sent;renderConfirm();show("",true);
