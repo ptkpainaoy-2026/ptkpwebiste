@@ -627,3 +627,7 @@ a.btn[data-wa],.band a.btn.o[data-wa]{background:var(--wa);border-color:var(--wa
 a.btn[data-fb]:hover,.band a.btn.o[data-fb]:hover{background:var(--fb);border-color:var(--fb);color:#fff;filter:brightness(1.1);transform:translateY(-2px)}
 a.btn[data-ig]:hover,.band a.btn.o[data-ig]:hover{background:var(--ig-btn);border-color:transparent;color:#fff;filter:brightness(1.1);transform:translateY(-2px)}
 a.btn[data-wa]:hover,.band a.btn.o[data-wa]:hover{background:var(--wa);border-color:var(--wa);color:#04321a;filter:brightness(1.06);transform:translateY(-2px)}
+
+/* footer: the original full-colour logo on a white card */
+.ft-logo{width:230px;background:#fff;border-radius:16px;padding:14px 16px;margin:0 0 20px;box-shadow:0 14px 30px -18px rgba(0,0,0,.6)}
+@media(max-width:560px){.ft-logo{width:210px}}
