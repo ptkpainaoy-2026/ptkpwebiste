@@ -631,3 +631,9 @@ a.btn[data-wa]:hover,.band a.btn.o[data-wa]:hover{background:var(--wa);border-co
 /* footer: the original full-colour logo on a white card */
 .ft-logo{width:230px;background:#fff;border-radius:16px;padding:14px 16px;margin:0 0 20px;box-shadow:0 14px 30px -18px rgba(0,0,0,.6)}
 @media(max-width:560px){.ft-logo{width:210px}}
+
+/* ===== header option E: thick navy line on top, sky-blue quote button ===== */
+.site-header::before{height:8px;background:var(--navy)}
+.nav a.cta{background:#3bb0ff;color:var(--navy);font-weight:700;box-shadow:0 10px 22px -12px rgba(10,42,102,.55)}
+.nav a.cta:hover{background:var(--navy);color:#fff}
+@media(max-width:820px){.nav a.cta{background:#3bb0ff;color:var(--navy)}.nav a.cta:hover{background:var(--navy);color:#fff}}
